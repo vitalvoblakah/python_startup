@@ -1,0 +1,30 @@
+version: '2'
+services:
+
+  database:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: docker
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    ports:
+      - "5432:3306"
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: /application/entrypoint.sh
+    working_dir: /app
+    volumes:
+      - .:/application
+      - ./entrypoint.sh:/application/entrypoint.sh
+      - ./app:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+
+
+
