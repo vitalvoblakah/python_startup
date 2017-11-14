@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Application</title>
+    {% include 'styles.html' %}
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+</head>
+
+
+<div class="container">
+    <div class="row">
+        {% if not request.user.is_superuser %}
+            <div class="col-md-12 text-center">
+                <h1 class="text-success">You are successfully logged in! Congrats! <i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                {{ users }}
+            </div>
+        {% endif %}
+
+        <h2><caption>Users list <i class="fa fa-user-circle-o" aria-hidden="true"></i></caption></h2>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">email <i class="fa fa-envelope-o" aria-hidden="true"></i></th>
+                <th scope="col">first name <i class="fa fa-user-o" aria-hidden="true"></i></th>
+                <th scope="col">last name <i class="fa fa-user-o" aria-hidden="true"></i></th>
+                <th scope="col">date joined <i class="fa fa-calendar-o" aria-hidden="true"></i></th>
+                <th scope="col">active <i class="fa fa-check-circle-o" aria-hidden="true"></i></th>
+            </tr>
+            </thead>
+
+            {% for i in users %}
+
+                <tbody>
+                <tr>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.first_name }}</td>
+                    <td>{{ i.last_name }}</td>
+                    <td>{{ i.date_joined }}</td>
+                    <td>{{ i.is_active }} <i class="fa fa-check" aria-hidden="true"></i></td>
+                </tr>
+                </tbody>
+            {% endfor %}
+
+        </table>
+
+    </div>
+</div>
+
+
+{% include 'scripts.html' %}
+
+</html>

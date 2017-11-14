@@ -1,0 +1,85 @@
+#index-page .jumbotron {
+    margin-top: 14%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.errorlist > li {
+    color: coral;
+}
+
+a.thumbnail:hover {
+    cursor: pointer;
+}
+
+.form-group.required label:before {
+    content: '* ';
+    color: coral;
+}
+
+img.small-thumbnail {
+    max-height: 24px;
+    border-radius: 4px;
+    border: solid 2px white;
+}
+
+.trumbowyg-editor, .trumbowyg, .trumbowyg-modal-box {
+    background-color: white;
+    color: black;
+}
+
+.progress {
+    height: 25px;
+}
+
+.progress-bar {
+    padding-top: 6px
+}
+
+.sr-only {
+    font-size: 15px;
+    position: initial;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    padding: 5px;
+    overflow: visible;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.tab-content {
+    padding: 10px;
+    border-right: 1px solid #464545;
+    border-bottom: 1px solid #464545;
+    border-left: 1px solid #464545;
+}
+
+.inline-form {
+    display: inline;
+}
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  background: white;
+  max-width: 70%;
+  width: 70%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th {
+  font-weight: normal;
+  color: #039;
+  border-bottom: 2px solid #6678b1;
+  padding: 10px 8px;
+}
+td {
+  color: #669;
+  padding: 9px 8px;
+  transition: .3s linear;
+}
+tr:hover td {color: #6699ff;
+}

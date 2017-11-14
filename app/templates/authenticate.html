@@ -1,0 +1,21 @@
+<div class="container">
+     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <h3>Login </h3>
+
+
+            <form method="post">
+            {% csrf_token %}
+
+                <div>
+                    {% include 'form_snippet.html' with form=form %}
+                </div>
+
+                <button class="btn btn-success" type="submit">Login </button>
+                <a class="btn btn-primary" role="button" href="{% url 'register_page' %}">Go to Register</a>
+
+            </form>
+        </div>
+    </div>
+</div>
